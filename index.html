@@ -7,25 +7,88 @@
     <title>Document</title>
   </head>
   <body>
-    <ul id="root"></ul>
+    <div id="root"></div>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <script>
+    <script type="text/babel">
       const root = document.querySelector("#root");
-      const li1 = React.createElement("li", {
-        children: "Ramdan belajar React",
-      });
-      const li2 = React.createElement("li", {
-        children: "bismillah bisa",
-      });
-      const li3 = React.createElement("li", {
-        children: "bismillah bisa",
-      });
-      const element = React.createElement("ul", { className: "List" }, li1, li2, li3);
-      ReactDOM.render(element, root);
-    </script>
+      //   const li1 = React.createElement("li", {
+      //     children: "Ramdan belajar React",
+      //   });
+      //   const li2 = React.createElement("li", {
+      //     children: "bismillah bisa",
+      //   });
+      //   const li3 = React.createElement("li", {
+      //     children: "bismillah bisa",
+      //   });
+      //   const element = React.createElement("ul", { className: "List" }, li1, li2, li3);
+      //   ReactDOM.render(element, root);
 
+      //   // =========bable JS ===============
+      //   const element = (
+      //     <ul>
+      //       <li>bisa</li>
+      //       <li>bisa2</li>
+      //       <li>bisa3</li>
+      //     </ul>
+      //   );
+      //   ReactDOM.render(element, root);
+
+      //   ========= Memakai Fungsi=========
+      //   const name = "ramdan";
+      //   function ngegas(text) {
+      //     return text.toUpperCase();
+      //   }
+      //   const element = <h1> halo {ngegas(name)}</h1>;
+
+      // =========== Memakai Fungsi 2 =============
+      //   function hai(name) {
+      //     return (
+      //       <p>
+      //         HAI ! <b>{name}</b>
+      //       </p>
+      //     );
+      //   }
+      //   const element = (
+      //     <>
+      //       {hai("ramdan")}
+      //       {hai("Dinda")}
+      //       {hai("Farhan ")}
+      //     </>
+      //   );
+      //  =========== React Komponent =============
+      //   function Hai(props) {
+      //     console.log(name);
+      //     return (
+      //       <p>
+      //         HAI ! <b>{props.name}</b>
+      //       </p>
+      //     );
+      //   }
+      //   const element = (
+      //     <>
+      //       <Hai name="ramdan" />
+      //     </>
+      //   );
+
+      //   ReactDOM.render(element, root);
+
+      function tick() {
+        const element = (
+          <div>
+            <h1> Jam Sekarang </h1>
+            <h2>{new Date().toLocaleTimeString()}</h2>
+          </div>
+        );
+        ReactDOM.render(element, root);
+      }
+      tick();
+      setInterval(() => {
+        tick();
+      }, 1000);
+    </script>
     <!-- <script>
       const root = document.querySelector("#root");
       const element = document.createElement("h1");
