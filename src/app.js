@@ -1,27 +1,29 @@
 const root = document.querySelector("#root");
 
 function App() {
-  const state = React.useState(0);
-  console.log(state);
-  const count = state[0];
-  const upCount = state[1];
+  const [count, upCount] = React.useState(0);
+  const [klik, setKlik] = React.useState(false);
+  React.useEffect(function () {
+    console.log(document.getElementById("judul"));
+  });
   return (
     <>
+      <h1 id="judul"> Hallo ini judul </h1>
       <button
         onClick={() => {
-          upCount(count - 1);
+          setKlik(true);
         }}
       >
-        -
+        klik aku{" "}
       </button>
-      <span>{count}</span>
       <button
         onClick={() => {
           upCount(count + 1);
         }}
       >
-        +
+        Tambah
       </button>
+      <span> Nilai sekarang {count}</span>
     </>
   );
 }
