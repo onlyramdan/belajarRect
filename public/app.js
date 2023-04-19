@@ -3,8 +3,8 @@ function App() {
   const [count, upCount] = React.useState(0);
   const [klik, setKlik] = React.useState(false);
   React.useEffect(function () {
-    console.log(document.getElementById("judul"));
-  });
+    console.log("exec");
+  }, [klik]);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h1", {
     id: "judul"
   }, " Hallo ini judul "), /*#__PURE__*/React.createElement("button", {
