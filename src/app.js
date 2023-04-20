@@ -1,15 +1,27 @@
 const root = document.querySelector("#root");
 
 function App() {
-  const [login, setLogin] = React.useState(false);
-  const judulRef = React.useRef(null);
-
-  React.useEffect(function () {
-    judulRef.current.textContent = "App";
-  }, []);
+  const [nama, setNama] = React.useState("Ramdan");
+  function ketikaSubmit(event) {
+    event.preventDefault();
+    console.log("Nama :", nama);
+  }
   return (
     <>
-      <h1 ref={judulRef}>Aplication</h1>
+      <form onSubmit={ketikaSubmit}>
+        <div>
+          <label> Nama : </label>
+          <input
+            type="text"
+            name="nama"
+            value={nama}
+            onChange={(event) => {
+              setNama(event.target.value);
+            }}
+          />
+        </div>
+        <button type="submit">Kirim</button>
+      </form>
     </>
   );
 }
